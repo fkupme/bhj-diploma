@@ -20,6 +20,7 @@ class App {
     Sidebar.init();
 
     this.initUser();
+
   }
 
   /**

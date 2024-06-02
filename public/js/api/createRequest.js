@@ -40,13 +40,12 @@ const createRequest = (options = {}) => {
 		}
 
 	} else {
-		const formData = new FormData;
-
-		dataEnteries.forEach(pair => formData.append(...pair))
+		// const formData = new FormData;
+		// dataEnteries.forEach(pair => formData.append(...pair))
 
 		try {
 			xhr.open(method, url);
-			xhr.send(formData);
+			xhr.send(data);
 		} catch (error) {
 			console.error(error)
 		}
@@ -54,21 +53,3 @@ const createRequest = (options = {}) => {
 	}
 
 };
-
-createRequest({
-	url: 'http://localhost:8000',
-	data: { email: "demo@demo", password: "demo"},
-	method: 'GET',
-	callback: (response) => {
-		console.log(response);
-	}
-});
-
-createRequest({
-	url: 'http://localhost:8000',
-	data: { email: "demo@demo", password: "demo"},
-	method: 'POST',
-	callback: (response) => {
-		console.log(response);
-	}
-});
